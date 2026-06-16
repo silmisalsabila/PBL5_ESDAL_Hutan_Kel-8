@@ -40,10 +40,12 @@ st.write("""
 3. Siti Annisa Dewanty (10090224033)
 """)
 
-### Mata Kuliah
+st.write(""" 
+Mata Kuliah
 Ekonomi Sumber Daya Alam dan Lingkungan
 
-### Dosen Pengampu
+st.write("""
+Dosen Pengampu
 Yuhka Sundaya S.E., M.Si.
 """)
 
