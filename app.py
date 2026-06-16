@@ -36,10 +36,15 @@ st.write("**Kelompok 8**")
 
 st.write("""
 1. Nadylah Agustinawati (10090224003)
-
 2. Silmi Yusniah Salsabila (10090224020)
-
 3. Siti Annisa Dewanty (10090224033)
+""")
+
+### Mata Kuliah
+Ekonomi Sumber Daya Alam dan Lingkungan
+
+### Dosen Pengampu
+Yuhka Sundaya S.E., M.Si.
 """)
 
 st.write("""
