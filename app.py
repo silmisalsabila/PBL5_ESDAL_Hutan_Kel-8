@@ -135,12 +135,12 @@ elif menu == "Grafik":
 
     st.header("Tingkat Ancaman terhadap Hutan")
 
-    grafik = pd.DataFrame({
-        "Kategori": [
-            "Deforestasi",
-            "Penebangan Liar",
-            "Kebakaran",
-            "Eksploitasi"
+grafik = pd.DataFrame({
+    "Kategori": [
+        "Deforestasi",
+        "Penebangan Liar",
+        "Kebakaran",
+        "Eksploitasi"
         ],
         "Skor": [40, 25, 20, 15]
     })
