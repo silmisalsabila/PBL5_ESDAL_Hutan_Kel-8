@@ -1,5 +1,7 @@
 import os
 import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
 
 # ================= KONFIGURASI HALAMAN =================
 st.set_page_config(
@@ -135,12 +137,12 @@ elif menu == "Grafik":
 
     st.header("Tingkat Ancaman terhadap Hutan")
 
-grafik = pd.DataFrame({
-    "Kategori": [
-        "Deforestasi",
-        "Penebangan Liar",
-        "Kebakaran",
-        "Eksploitasi"
+    grafik = pd.DataFrame({
+        "Kategori": [
+            "Deforestasi",
+            "Penebangan Liar",
+            "Kebakaran",
+            "Eksploitasi"
         ],
         "Skor": [40, 25, 20, 15]
     })
@@ -180,13 +182,14 @@ elif menu == "Simulasi":
 
     jumlah = st.slider(
         "Jumlah Pengunjung",
-        100,
-        10000,
-        1000
+        min_value=100,
+        max_value=10000,
+        value=1000
     )
 
     wtp = st.number_input(
         "Willingness To Pay per Pengunjung (Rp)",
+        min_value=0,
         value=10000
     )
 
