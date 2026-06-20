@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 # ==================================================
 
 st.set_page_config(
-    page_title="Eco-Forest Valuation",
+    page_title="Valuasi Ekonomi Taman Nasional Gunung Ciremai (TNGC)",
     layout="wide"
 )
 
