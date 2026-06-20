@@ -15,14 +15,16 @@ st.set_page_config(
 # JUDUL APLIKASI
 # ==================================================
 
-col1, col2 = st.columns([1, 6])
+col1, col2 = st.columns([1, 8])
 
 with col1:
-    st.image("Logo_Unisba.png", width=100)
+    st.image("Logo_Unisba.png", width=90)
 
 with col2:
-    st.title("Valuasi Ekonomi Taman Nasional Gunung Ciremai (TNGC)")
-    st.subheader("Pembelajaran Ekonomi Sumber Daya Hutan")
+    st.markdown("""
+    # Valuasi Ekonomi Taman Nasional Gunung Ciremai (TNGC)
+    ### Pembelajaran Ekonomi Sumber Daya Hutan
+    """)
 
 # ==================================================
 # SIDEBAR MENU
@@ -53,7 +55,7 @@ if menu == "Beranda":
     st.header("Beranda")
 
     st.write("""
-    Eco-Forest Valuation merupakan aplikasi pembelajaran interaktif yang dirancang untuk membantu mahasiswa memahami konsep ekonomi sumber daya hutan melalui pendekatan valuasi ekonomi. Aplikasi ini mengintegrasikan berbagai konsep penting dalam Ekonomi Sumber Daya Alam dan Lingkungan, seperti Total Economic Value (TEV), trade-off penggunaan lahan, serta Payment for Ecosystem Services (PES).
+    Aplikasi Valuasi Ekonomi Taman Nasional Gunung Ciremai (TNGC) merupakan media pembelajaran interaktif yang dirancang untuk membantu mahasiswa memahami konsep ekonomi sumber daya hutan melalui pendekatan valuasi ekonomi lingkungan. Aplikasi ini mengintegrasikan berbagai konsep penting dalam Ekonomi Sumber Daya Alam dan Lingkungan, seperti Total Economic Value (TEV), trade-off penggunaan lahan, serta Payment for Ecosystem Services (PES).
 
     Sebagai contoh penerapan, aplikasi ini menggunakan pendekatan studi kasus pada Taman Nasional Gunung Ciremai yang memiliki fungsi ekologis, ekonomi, dan sosial yang penting bagi masyarakat sekitar. Kawasan ini berperan sebagai penyedia jasa lingkungan berupa penyimpanan karbon, pengaturan tata air, pelestarian keanekaragaman hayati, dan pengembangan ekowisata.
 
@@ -132,11 +134,8 @@ elif menu == "Profil TNGC":
     })
 
     st.bar_chart(
-        biodiv.set_index("Kategori")
-    )
-    st.bar_chart(
-        biodiv.set_index("Kategori")
-    )
+    biodiv.set_index("Kategori")
+)
 
     st.write("""
     Keanekaragaman hayati Taman Nasional Gunung Ciremai merupakan aset ekonomi lingkungan yang memiliki:
@@ -474,7 +473,7 @@ elif menu == "Tentang Aplikasi":
     st.header("Tentang Aplikasi")
 
     st.write("""
-Eco-Forest Valuation dikembangkan sebagai media pembelajaran pada mata kuliah Ekonomi Sumber Daya Alam dan Lingkungan (ESDAL).
+Aplikasi Valuasi Ekonomi Taman Nasional Gunung Ciremai (TNGC) dikembangkan sebagai media pembelajaran pada mata kuliah Ekonomi Sumber Daya Alam dan Lingkungan (ESDAL).
 
 Tujuan aplikasi ini adalah membantu mahasiswa memahami konsep valuasi ekonomi lingkungan melalui simulasi interaktif dan studi kasus nyata.
 
