@@ -21,7 +21,7 @@ with col1:
     st.image("Logo_Unisba.png", width=100)
 
 with col2:
-    st.title("Eco-Forest Valuation")
+    st.title("Valuasi Ekonomi Taman Nasional Gunung Ciremai (TNGC)")
     st.subheader("Pembelajaran Ekonomi Sumber Daya Hutan")
 
 # ==================================================
