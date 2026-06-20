@@ -6,7 +6,6 @@
 
 if menu == "Beranda":
 
-```
 st.header("Beranda")
 
 st.write("""
@@ -30,7 +29,6 @@ st.write("""
 
 5. Visualisasi Komponen Nilai Ekonomi Hutan
 """)
-```
 
 # ==================================================
 
@@ -40,7 +38,6 @@ st.write("""
 
 elif menu == "Kalkulator TEV":
 
-```
 st.header("Kalkulator Total Economic Value (TEV)")
 
 st.write("""
@@ -96,7 +93,6 @@ tev = luas * (
 st.success(
     f"Total Economic Value = Rp {tev:,.0f}"
 )
-```
 
 # ==================================================
 
@@ -106,7 +102,6 @@ st.success(
 
 elif menu == "Trade-off Lahan":
 
-```
 st.header("Simulasi Trade-off Penggunaan Lahan")
 
 st.write("""
@@ -161,7 +156,6 @@ else:
     st.info(
         "Kedua alternatif memiliki nilai ekonomi yang sama."
     )
-```
 
 # ==================================================
 
@@ -171,7 +165,6 @@ else:
 
 elif menu == "Kebijakan PES":
 
-```
 st.header("Payment for Ecosystem Services (PES)")
 
 st.write("""
@@ -201,7 +194,6 @@ st.metric(
     "Estimasi Nilai Insentif",
     f"Rp {insentif:,.0f}"
 )
-```
 
 # ==================================================
 
@@ -211,7 +203,6 @@ st.metric(
 
 elif menu == "Kasus Interaktif":
 
-```
 st.header("Kasus Interaktif")
 
 kasus = st.selectbox(
@@ -254,7 +245,6 @@ else:
 
     Oleh karena itu, ekowisata sering dianggap sebagai alternatif pemanfaatan hutan yang mampu menyeimbangkan tujuan ekonomi dan konservasi.
     """)
-```
 
 # ==================================================
 
@@ -264,7 +254,6 @@ else:
 
 elif menu == "Visualisasi TEV":
 
-```
 st.header("Visualisasi Komponen TEV")
 
 st.write("""
@@ -299,7 +288,6 @@ ax.set_title(
 )
 
 st.pyplot(fig)
-```
 
 # ==================================================
 
@@ -309,7 +297,6 @@ st.pyplot(fig)
 
 elif menu == "Tentang Aplikasi":
 
-```
 st.header("Tentang Aplikasi")
 
 st.write("""
