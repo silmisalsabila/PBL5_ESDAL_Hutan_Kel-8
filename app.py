@@ -26,6 +26,7 @@ menu = st.sidebar.selectbox(
     "Pilih Menu",
     [
         "Beranda",
+        "Profil TNGC",
         "Kalkulator TEV",
         "Trade-off Lahan",
         "Kebijakan PES",
@@ -44,25 +45,115 @@ if menu == "Beranda":
     st.header("Beranda")
 
     st.write("""
-    Eco-Forest Valuation merupakan aplikasi pembelajaran interaktif yang dirancang untuk membantu mahasiswa memahami konsep ekonomi sumber daya hutan melalui pendekatan valuasi ekonomi. Aplikasi ini mengintegrasikan konsep Total Economic Value (TEV), trade-off penggunaan lahan, dan Payment for Ecosystem Services (PES) untuk menggambarkan bagaimana sumber daya hutan memberikan manfaat ekonomi, sosial, dan lingkungan secara berkelanjutan.
+    Eco-Forest Valuation merupakan aplikasi pembelajaran interaktif yang dirancang untuk membantu mahasiswa memahami konsep ekonomi sumber daya hutan melalui pendekatan valuasi ekonomi. Aplikasi ini mengintegrasikan berbagai konsep penting dalam Ekonomi Sumber Daya Alam dan Lingkungan, seperti Total Economic Value (TEV), trade-off penggunaan lahan, serta Payment for Ecosystem Services (PES).
 
-    Sebagai contoh penerapan, aplikasi ini menggunakan pendekatan studi kasus Taman Nasional Gunung Ciremai. Kawasan konservasi ini memiliki peran penting sebagai penyedia jasa lingkungan, penyerap karbon, habitat keanekaragaman hayati, serta sumber manfaat ekonomi melalui kegiatan wisata alam dan pemberdayaan masyarakat sekitar.
+    Sebagai contoh penerapan, aplikasi ini menggunakan pendekatan studi kasus pada Taman Nasional Gunung Ciremai yang memiliki fungsi ekologis, ekonomi, dan sosial yang penting bagi masyarakat sekitar. Kawasan ini berperan sebagai penyedia jasa lingkungan berupa penyimpanan karbon, pengaturan tata air, pelestarian keanekaragaman hayati, dan pengembangan ekowisata.
 
-    Melalui simulasi dan visualisasi yang tersedia, pengguna dapat memahami bahwa nilai suatu kawasan hutan tidak hanya berasal dari hasil hutan yang dapat dimanfaatkan secara langsung, tetapi juga dari berbagai manfaat tidak langsung yang mendukung keberlanjutan lingkungan dan kesejahteraan masyarakat.
+    Melalui simulasi dan visualisasi yang tersedia, pengguna dapat memahami bagaimana suatu kawasan hutan tidak hanya menghasilkan manfaat ekonomi secara langsung, tetapi juga memberikan manfaat tidak langsung dan manfaat keberlanjutan yang sering kali tidak diperhitungkan dalam pengambilan keputusan pembangunan.
     """)
 
     st.subheader("Modul Aplikasi")
 
     st.write("""
-    1. Kalkulator Total Economic Value (TEV)
+    1. Profil Taman Nasional Gunung Ciremai
 
-    2. Simulasi Trade-off Penggunaan Lahan
+    2. Kalkulator Total Economic Value (TEV)
 
-    3. Payment for Ecosystem Services (PES)
+    3. Simulasi Trade-off Penggunaan Lahan
 
-    4. Studi Kasus Interaktif
+    4. Payment for Ecosystem Services (PES)
 
-    5. Visualisasi Komponen Nilai Ekonomi Hutan
+    5. Studi Kasus Interaktif
+
+    6. Visualisasi Nilai Ekonomi Hutan
+    """)
+
+elif menu == "Profil TNGC":
+
+    st.header("Profil Taman Nasional Gunung Ciremai")
+
+    col1, col2, col3 = st.columns(3)
+
+    col1.metric("Luas Kawasan", "14.841,30 ha")
+    col2.metric("Ketinggian Puncak", "3.078 mdpl")
+    col3.metric("Jenis Tumbuhan", "119")
+
+    col1, col2 = st.columns(2)
+
+    col1.metric("Spesies Fauna", ">300")
+    col2.metric("Spesies Anggrek", "117")
+
+    st.subheader("Keanekaragaman Hayati")
+
+    biodiv = pd.DataFrame({
+        "Kategori": [
+            "Jenis Tumbuhan",
+            "Spesies Fauna",
+            "Spesies Anggrek"
+        ],
+        "Jumlah": [
+            119,
+            300,
+            117
+        ]
+    })
+
+    st.bar_chart(
+        biodiv.set_index("Kategori")
+    )
+
+    st.write("""
+    Keanekaragaman hayati Taman Nasional Gunung Ciremai merupakan aset ekonomi lingkungan yang memiliki:
+
+    • Existence Value
+
+    • Option Value
+
+    • Conservation Value
+
+    dalam konsep Total Economic Value (TEV).
+    """)
+
+    st.subheader("Flora Dominan")
+
+    flora = pd.DataFrame({
+        "Flora Dominan": [
+            "Saninten",
+            "Puspa",
+            "Huru",
+            "Mara"
+        ]
+    })
+
+    st.table(flora)
+
+    st.write("""
+    Fungsi ekologis flora dominan:
+
+    • Penyerap karbon
+
+    • Penjaga kesuburan tanah
+
+    • Penyimpan cadangan air
+
+    • Habitat berbagai satwa liar
+    """)
+
+    st.subheader("Satwa Kunci")
+
+    satwa = pd.DataFrame({
+        "Satwa": [
+            "Macan Tutul Jawa",
+            "Elang Jawa",
+            "Surili",
+            "Kodok Merah Ciremai"
+        ]
+    })
+
+    st.table(satwa)
+
+    st.write("""
+    Satwa tersebut merupakan spesies indikator dan satwa konservasi utama yang mencerminkan kesehatan ekosistem Taman Nasional Gunung Ciremai.
     """)
 
 # ==================================================
@@ -74,8 +165,20 @@ elif menu == "Kalkulator TEV":
     st.header("Kalkulator Total Economic Value (TEV)")
 
     st.write("""
-    Total Economic Value (TEV) merupakan pendekatan yang digunakan untuk menghitung seluruh manfaat ekonomi yang dihasilkan oleh suatu kawasan hutan. Pendekatan ini mencakup nilai guna langsung, nilai jasa lingkungan, nilai pilihan, dan nilai eksistensi.
-    """)
+Pada simulasi ini, pengguna dapat memasukkan nilai dari setiap komponen manfaat untuk memperoleh estimasi total nilai ekonomi suatu kawasan hutan.
+
+Komponen yang digunakan meliputi:
+
+• Nilai guna langsung → wisata dan hasil hutan.
+
+• Jasa lingkungan → penyediaan air dan penyimpanan karbon.
+
+• Nilai pilihan → potensi pemanfaatan di masa depan.
+
+• Nilai eksistensi → nilai keberadaan flora dan fauna.
+
+Pendekatan ini banyak digunakan dalam pengambilan keputusan konservasi dan pengelolaan hutan berkelanjutan.
+""")
 
     st.info("""
     Contoh Studi Kasus:
@@ -131,9 +234,15 @@ elif menu == "Trade-off Lahan":
 
     st.header("Simulasi Trade-off Penggunaan Lahan")
 
-    st.write("""
-    Simulasi ini membantu pengguna memahami konsep trade-off dengan membandingkan nilai ekonomi dari hutan lestari dan konversi lahan pertanian.
-    """)
+    st.info("""
+Simulasi ini membandingkan dua alternatif penggunaan lahan:
+
+• Hutan Lestari
+
+• Konversi Pertanian
+
+Keuntungan ekonomi jangka pendek belum tentu lebih besar dibandingkan manfaat ekologis dan ekonomi jangka panjang yang dihasilkan oleh hutan.
+""")
 
     nilai_hutan = st.slider(
         "Nilai Hutan Lestari (Miliar Rupiah)",
@@ -191,8 +300,18 @@ elif menu == "Kebijakan PES":
     st.header("Payment for Ecosystem Services (PES)")
 
     st.write("""
-    Payment for Ecosystem Services (PES) merupakan mekanisme pemberian insentif kepada masyarakat atau pengelola kawasan yang mampu menjaga jasa lingkungan.
-    """)
+Payment for Ecosystem Services (PES) merupakan mekanisme insentif ekonomi yang diberikan kepada masyarakat atau pengelola kawasan yang mampu menjaga jasa lingkungan.
+
+Dalam konteks Taman Nasional Gunung Ciremai, skema PES dapat dikaitkan dengan:
+
+• Penyimpanan karbon
+
+• Perlindungan daerah tangkapan air
+
+• Konservasi keanekaragaman hayati
+
+Simulasi berikut digunakan untuk menghitung estimasi insentif berdasarkan serapan karbon.
+""")
 
     karbon = st.slider(
         "Serapan Karbon (Ton CO2)",
@@ -236,8 +355,12 @@ elif menu == "Kasus Interaktif":
         st.subheader("Taman Nasional Gunung Ciremai")
 
         st.write("""
-        Taman Nasional Gunung Ciremai merupakan kawasan konservasi yang memiliki nilai ekologis dan ekonomi yang tinggi.
-        """)
+Taman Nasional Gunung Ciremai merupakan kawasan konservasi yang memiliki berbagai manfaat ekonomi dan ekologis.
+
+Selain berfungsi sebagai habitat berbagai jenis flora dan fauna, kawasan ini juga menjadi daerah tangkapan air yang penting bagi masyarakat Kabupaten Kuningan, Majalengka, dan Cirebon.
+
+Dari perspektif ekonomi lingkungan, manfaat kawasan ini tidak hanya berasal dari wisata alam, tetapi juga dari penyimpanan karbon, perlindungan biodiversitas, serta fungsi hidrologis. Oleh karena itu, valuasi ekonomi diperlukan agar seluruh manfaat tersebut dapat dipertimbangkan dalam proses pengambilan kebijakan.
+""")
 
     elif kasus == "Karbon Hutan":
 
@@ -291,6 +414,9 @@ elif menu == "Visualisasi TEV":
     )
 
     st.pyplot(fig)
+st.write("""
+Jasa lingkungan menjadi komponen terbesar dalam Total Economic Value karena mencakup manfaat penyimpanan karbon, penyediaan air, perlindungan keanekaragaman hayati, serta berbagai fungsi ekologis lainnya yang mendukung keberlanjutan lingkungan.
+""")
 
 # ==================================================
 # TENTANG APLIKASI
@@ -301,17 +427,21 @@ elif menu == "Tentang Aplikasi":
     st.header("Tentang Aplikasi")
 
     st.write("""
-    Eco-Forest Valuation dikembangkan sebagai media pembelajaran untuk mendukung pemahaman mahasiswa terhadap konsep ekonomi sumber daya hutan.
+Eco-Forest Valuation dikembangkan sebagai media pembelajaran pada mata kuliah Ekonomi Sumber Daya Alam dan Lingkungan (ESDAL).
 
-    Konsep yang digunakan dalam aplikasi ini meliputi:
+Tujuan aplikasi ini adalah membantu mahasiswa memahami konsep valuasi ekonomi lingkungan melalui simulasi interaktif dan studi kasus nyata.
 
-    • Total Economic Value (TEV)
+Konsep yang digunakan meliputi:
 
-    • Trade-off Penggunaan Lahan
+• Total Economic Value (TEV)
 
-    • Payment for Ecosystem Services (PES)
+• Payment for Ecosystem Services (PES)
 
-    • Valuasi Jasa Lingkungan
+• Trade-off Penggunaan Lahan
 
-    • Pengelolaan Hutan Berkelanjutan
-    """)
+• Valuasi Jasa Lingkungan
+
+• Konservasi Biodiversitas
+
+Studi kasus yang digunakan adalah Taman Nasional Gunung Ciremai sebagai contoh kawasan konservasi yang memiliki nilai ekonomi, sosial, dan ekologis yang tinggi.
+""")
